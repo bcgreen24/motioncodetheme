@@ -1,0 +1,90 @@
+<div class="header_above">{{page.header_above}}</div>
+
+<header class="header">
+
+	<div class="flex">
+	<div class="header_left">{{page.header_left}}</div>
+	<div class="header_right">{{page.header_right}}</div>
+	</div>
+
+	<div class="header_bottom">
+	<nav class="mc_nav">{{page.header_bottom}}</nav>
+	</div>
+	
+	<div id="hamburger" class="offScreen">
+		<div class="line"></div>
+		<div class="line"></div>
+		<div class="line"></div>
+	</div>
+
+	<div id="hmenu">
+		{{page.hamburger}}
+	</div>
+
+</header>
+
+<nav class="mc_nav">
+	{{page.navigation}}
+</nav>
+
+<section class="flex">
+	<main class="content">
+		{% if _context.is_front == 0 %}
+			{{page.content.page_title}}
+		{% endif %}
+		{{page.content}}
+	</main>
+	<aside>
+		{{page.sidebar_first}}
+	</aside>
+</section>
+
+<footer class="footer">
+	<div class="footer_left">{{page.footer_left}}</div>
+	<div class="footer_right">{{page.footer_right}}</div>
+	<div class="footer_bottom">
+		{{page.footer_bottom}}
+
+
+		{% if is_admin == 1 %}
+			<div class="flexvars">
+				<div id="context" class="vars">
+					<button id="showDialog">Show Vars</button>
+					<dialog id="vars">
+						<ul>
+							{% for key, value in _context  %}
+								<li>{{ key }}</li>
+							{% endfor %}
+						</ul>
+					</dialog>
+				</div>
+				<!-- end vars div -->
+
+				<div id="page" class="vars">
+					<button id="showDialogPage">Show Page</button>
+					<dialog id="Pagevars">
+						<ul>
+							{% for key, value in page  %}
+								<li>{{ key }}</li>
+							{% endfor %}
+						</ul>
+					</dialog>
+				</div>
+				<!-- end page div -->
+
+				<div id="node" class="vars">
+					<button id="showDialogNode">Show Node</button>
+					<dialog id="Nodevars">
+						<ul>
+							{% for key, value in node  %}
+								<li>{{ key }}</li>
+							{% endfor %}
+						</ul>
+					</dialog>
+				</div>
+				<!-- end node div -->
+			</div>
+			<!-- end vars flex div -->
+		{% endif %}
+	</div>
+</footer>

@@ -1,0 +1,21 @@
+name: Motioncode
+type: theme
+base theme: classy
+description: Motioncode theme
+package: Motioncode
+core_version_requirement: ^9
+libraries:
+  - motioncode/styling
+regions:
+  header_above: 'Header Above'
+  header_left: 'Header Left'
+  header_right: 'Header Right'
+  header_bottom: 'Header Bottom'
+  hamburger: 'Hamburger'
+  content: 'Content'
+  sidebar_first: 'Sidebar First'
+  footer_left: 'Footer Left'
+  footer_right: 'Footer Right'
+  footer_bottom: 'Footer Bottom'
+  navigation: 'Navigation'
+  primary_menu: 'Primary Menu'
